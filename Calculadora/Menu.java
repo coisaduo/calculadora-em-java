@@ -1,11 +1,14 @@
 import java.util.Scanner;
-import java.io.IOException;
 
 public class Menu {
-    public static void Menu (Scanner scanner) {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        menu(scanner);
+    }
+
+    public static void menu (Scanner scanner) {
         int opc;
         do {
-            clearScreen();
             System.out.println("╔═══════════════════════════════════════════╗");
             System.out.println("║             ESCOLHA UMA OPÇÃO             ║");
             System.out.println("╠═══════════════════════════════════════════╣");
@@ -19,9 +22,25 @@ public class Menu {
 
             switch (opc) {
                 case 1:
-                    Soma.soma;
+                    Soma.fazSoma(scanner);
                     break;
+
+                case 2:
+                    Subtracao.fazSubtracao(scanner);
+                    break;
+
+                case 3:
+                    Divisao.fazDivisao(scanner);
+                    break;
+
+                case 4:
+                    Multipla.fazMultipla(scanner);
+                    break;
+
+                case 5:
+                    System.out.println("Saindo...");
             }
-        }
+
+        } while (opc != 5);
     }
  }
